@@ -1,0 +1,13 @@
+<div class="transacao {{ transacao.modelo }} ff-roboto-mono" [ngClass]="larguraTransacao()">
+    <img src="/assets/imagens/{{ transacao.modelo }}.png" alt="Aspas Coloridas">
+    <p class="conteudo">{{ transacao.conteudo }}</p>
+    <p class="conteudo"><b>{{ transacao.valor }}</b></p>
+    <div class="acoes">
+        <button class="botao-editar">
+            <img src="/assets/imagens/icone-editar.png" routerLink="/transacoes/editarTransacao/{{transacao.id}}" alt="Ícone de editar">
+        </button>
+        <button class="botao-excluir" routerLink="/transacoes/excluirTransacao/{{ transacao.id }}">
+            <img src="/assets/imagens/icone-excluir.png" alt="Ícone de excluir">
+        </button>
+    </div>
+</div>

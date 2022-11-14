@@ -1,0 +1,63 @@
+<section class="container criar-transacao ff-inter">
+  <header class="header">
+    <h2>Adicione uma nova transação:</h2>
+  </header>
+  <form>
+    <label for="transacao">Transação</label>
+    <input type="textarea" class="input" id="transacao" name="transacao" placeholder="Digite a descrição da transação" [(ngModel)]="transacao.conteudo">
+    <label for="valor">Valor</label>
+    <input type="textarea" class="input" id="valor" name="valor" placeholder="Digite o valor" [(ngModel)]="transacao.valor">
+    <label for="transacao">Tipo Transação</label>
+    <div class="container-radio">
+      <div class="radio-modelo">
+        <label for="despesa">
+          <input type="radio" id="despesa" value="despesa" name="tipo-transacao" [(ngModel)]="transacao.modelo">
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Despesa</span>
+        </label>
+        Prévia:
+        <div class="tipo-transacao despesa ff-roboto-mono">
+          <img src="../../../../assets/imagens/despesa.png" alt="Aspas azuis">
+          <p class="conteudo">{{ transacao.conteudo }}</p>
+          <p class="autoria"><b>{{ transacao.valor }}</b></p>
+        </div>
+      </div>
+      <div class="radio-modelo">
+        <label for="receita">
+          <input type="radio" id="receita" value="receita" name="tipo-transacao" [(ngModel)]="transacao.modelo">
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Receita</span>
+        </label>
+        Prévia:
+        <div class="tipo-transacao receita ff-roboto-mono">
+          <img src="../../../../assets/imagens/receita.png" alt="Aspas azuis">
+          <p class="conteudo">{{ transacao.conteudo }}</p>
+          <p class="autoria"><b>{{ transacao.valor }}</b></p>
+        </div>
+      </div>
+      <div class="radio-modelo">
+        <label for="transferencia">
+          <input type="radio" id="transferencia" value="transferencia" name="tipo-transacao" [(ngModel)]="transacao.modelo">
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Transferência</span>
+        </label>
+        Prévia:
+        <div class="tipo-transacao transferencia ff-roboto-mono">
+          <img src="../../../../assets/imagens/transferencia.png" alt="Aspas azuis">
+          <p class="conteudo">{{ transacao.conteudo }}</p>
+          <p class="autoria"><b>{{ transacao.valor }}</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="acoes">
+      <button (click)="criarTransacao()" class="botao">Salvar</button>
+      <button (click)="cancelar()" class="botao">Cancelar</button>
+    </div>
+  </form>
+</section>
