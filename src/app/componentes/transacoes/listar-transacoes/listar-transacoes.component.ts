@@ -11,11 +11,12 @@ import { Transacao } from '../transacoes';
 export class ListarTransacoesComponent implements OnInit {
 
   listaTransacoes: Transacao[] = [];
+  paginaAtual: number = 1
 
   constructor(private service: TransacaoService) { }
 
   ngOnInit(): void {
-    this.service.listar().subscribe((listaTransacoes) => {
+    this.service.listar(this.paginaAtual).subscribe((listaTransacoes) => {
       this.listaTransacoes = listaTransacoes
     })
   }

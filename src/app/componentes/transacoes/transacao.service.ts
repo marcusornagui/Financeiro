@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Transacao } from './transacoes';
 import { Observable } from 'rxjs';
 
@@ -12,8 +12,14 @@ export class TransacaoService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Transacao[]> {
-    return this.http.get<Transacao[]>(this.API)
+  listar(pagina: number): Observable<Transacao[]> {
+    const itensPorPagina = 6;
+
+    let params = new HttpParams()
+      .set("_page", pagina)
+      .set("_limit", itensPorPagina)
+
+    return this.http.get<Transacao[]>(this.API, {params})
   }
 
   criar(transacao: Transacao): Observable<Transacao> {
