@@ -1,5 +1,16 @@
 <section class="container">
     <header class="header d-flex">
+        <div class="buscar-transacoes">
+            <input 
+                type="search" 
+                class="filtro" 
+                placeholder="O que você procura?" 
+                autofocus 
+                [(ngModel)]="filtro" 
+                (keyup)="pesquisarTransacoes()"
+            >
+            <img src="/assets/imagens/lupa.png" alt="Lupa">
+        </div>
         <h2 class="ff-inter">Minhas Transações</h2>
         <button routerLink="/criarTransacao" class="botao">Adicionar</button>
     </header>
@@ -9,6 +20,11 @@
         </div>
     </div>
 </section>
+<app-botao-carregar-mais 
+    [haMaisTransacoes]="haMaisTransacoes"
+    (click)="carregarMaisTransacoes()"
+>
+</app-botao-carregar-mais>
 <ng-template #semTransacoes>
     <div class="ff-inter sem-transacoes">
         <p>Nenhuma transação cadastrada!</p>

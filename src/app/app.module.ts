@@ -12,6 +12,7 @@ import { ListarTransacoesComponent } from './componentes/transacoes/listar-trans
 import { TransacaoComponent } from './componentes/transacoes/transacao/transacao.component';
 import { ExcluirTransacaoComponent } from './componentes/transacoes/excluir-transacao/excluir-transacao.component';
 import { EditarTransacaoComponent } from './componentes/transacoes/editar-transacao/editar-transacao.component';
+import { BotaoCarregarMaisComponent } from './componentes/transacoes/listar-transacoes/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditarTransacaoComponent } from './componentes/transacoes/editar-transa
     ListarTransacoesComponent,
     TransacaoComponent,
     ExcluirTransacaoComponent,
-    EditarTransacaoComponent
+    EditarTransacaoComponent,
+    BotaoCarregarMaisComponent
   ],
   imports: [
     BrowserModule,
