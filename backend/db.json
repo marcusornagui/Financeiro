@@ -1,52 +1,53 @@
 {
   "transacoes": [
     {
-      "id": 1,
-      "conteudo": "teste55",
-      "valor": 1,
-      "modelo": "despesa"
-    },
-    {
-      "id": 2,
-      "conteudo": "teste 23333",
-      "valor": "27",
-      "modelo": "despesa"
-    },
-    {
       "id": 3,
       "conteudo": "transferencia teste",
       "valor": 2,
-      "modelo": "receita"
+      "modelo": "receita",
+      "favorito": true
     },
     {
       "conteudo": "Teste",
       "valor": "2ee333",
       "modelo": "despesa",
+      "favorito": true,
       "id": 4
     },
     {
       "conteudo": "2323",
       "valor": "3333",
       "modelo": "despesa",
+      "favorito": false,
       "id": 5
     },
     {
       "conteudo": "2",
       "valor": "2",
       "modelo": "despesa",
+      "favorito": false,
       "id": 6
     },
     {
       "id": 7,
       "conteudo": "2",
       "valor": "2",
-      "modelo": "receita"
+      "modelo": "receita",
+      "favorito": false
     },
     {
       "conteudo": "44",
       "valor": "44",
       "modelo": "despesa",
+      "favorito": false,
       "id": 8
+    },
+    {
+      "conteudo": "Novo",
+      "valor": "2",
+      "modelo": "despesa",
+      "favorito": false,
+      "id": 9
     }
   ]
 }

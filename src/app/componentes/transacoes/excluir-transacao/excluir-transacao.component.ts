@@ -14,7 +14,8 @@ export class ExcluirTransacaoComponent implements OnInit {
     id: 0,
     conteudo: '',
     valor: 0,
-    modelo: ''
+    modelo: '',
+    favorito: false
   }
 
   constructor(

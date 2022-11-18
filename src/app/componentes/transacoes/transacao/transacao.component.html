@@ -3,6 +3,9 @@
     <p class="conteudo">{{ transacao.conteudo }}</p>
     <p class="conteudo"><b>{{ transacao.valor }}</b></p>
     <div class="acoes">
+        <button class="botao-favorito" (click)="atualizarFavorito()">
+            <img src="/assets/imagens/icone-favorito-{{ mudarIconeFavorito() }}.png" alt="Ícone Favorito {{ mudarIconeFavorito() }}">
+        </button>
         <button class="botao-editar">
             <img src="/assets/imagens/icone-editar.png" routerLink="/transacoes/editarTransacao/{{transacao.id}}" alt="Ícone de editar">
         </button>

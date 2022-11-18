@@ -26,6 +26,21 @@ export class TransacaoService {
     return this.http.get<Transacao[]>(this.API, {params})
   }
 
+  listarTransacoesFavoritas(pagina: number, filtro: string): Observable<Transacao[]> {
+    const itensPorPagina = 6;
+
+    let params = new HttpParams()
+      .set("_page", pagina)
+      .set("_limit", itensPorPagina)
+      .set("favorito", true)
+
+      if(filtro.trim().length > 2) {
+        params = params.set("q", filtro)
+      }
+
+    return this.http.get<Transacao[]>(this.API, {params})
+  }
+
   criar(transacao: Transacao): Observable<Transacao> {
     return this.http.post<Transacao>(this.API, transacao)
   }
@@ -33,6 +48,11 @@ export class TransacaoService {
   editar(transacao: Transacao): Observable<Transacao> {
     const url = `${this.API}/${transacao.id}`
     return this.http.put<Transacao>(url, transacao)
+  }
+
+  mudarFavorito(transacao: Transacao): Observable<Transacao> {
+    transacao.favorito = !transacao.favorito
+    return this.editar(transacao)
   }
 
   excluir(id: number): Observable<Transacao> {

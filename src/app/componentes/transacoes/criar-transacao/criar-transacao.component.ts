@@ -30,7 +30,8 @@ export class CriarTransacaoComponent implements OnInit {
         Validators.required,
         Validators.maxLength(8)
       ])],
-      modelo: ['despesa']
+      modelo: ['despesa'],
+      favorito: [false]
     })
   }
 

@@ -1,3 +1,4 @@
+import { TransacaoService } from './../transacao.service';
 import { Transacao } from './../transacoes';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -12,10 +13,11 @@ export class TransacaoComponent implements OnInit {
     id: 0,
     conteudo: '',
     valor: 0,
-    modelo: ''
+    modelo: '',
+    favorito: false
   }
 
-  constructor() { }
+  constructor(private service: TransacaoService) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +28,18 @@ export class TransacaoComponent implements OnInit {
     } else {
       return 'transacao-p'
     }
+  }
+
+  mudarIconeFavorito(): string {
+    if (this.transacao.favorito == false) {
+      return 'inativo'
+    } else {
+      return 'ativo'
+    }
+  }
+
+  atualizarFavorito()  {
+    this.service.mudarFavorito(this.transacao).subscribe();
   }
 
 }

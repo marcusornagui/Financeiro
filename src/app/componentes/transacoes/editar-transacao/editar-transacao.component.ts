@@ -33,7 +33,8 @@ export class EditarTransacaoComponent implements OnInit {
           Validators.required,
           Validators.maxLength(8)
         ])],
-        modelo: [transacao.modelo]
+        modelo: [transacao.modelo],
+        favorito: [transacao.favorito]
       })
     })
   }

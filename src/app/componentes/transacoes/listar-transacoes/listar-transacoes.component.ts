@@ -42,5 +42,14 @@ export class ListarTransacoesComponent implements OnInit {
       })
   }
 
+  listarFavoritos() {
+    this.haMaisTransacoes = true
+    this.paginaAtual = 1
+    this.service.listarTransacoesFavoritas(this.paginaAtual, this.filtro)
+      .subscribe(listaTransacoesFavoritas => {
+        this.listaTransacoes = listaTransacoesFavoritas
+      })
+  }
+
 
 }
