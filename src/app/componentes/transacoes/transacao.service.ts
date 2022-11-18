@@ -12,7 +12,7 @@ export class TransacaoService {
 
   constructor(private http: HttpClient) { }
 
-  listar(pagina: number, filtro: string): Observable<Transacao[]> {
+  listar(pagina: number, filtro: string, favoritos: boolean): Observable<Transacao[]> {
     const itensPorPagina = 6;
 
     let params = new HttpParams()
@@ -23,23 +23,14 @@ export class TransacaoService {
         params = params.set("q", filtro)
       }
 
-    return this.http.get<Transacao[]>(this.API, {params})
-  }
-
-  listarTransacoesFavoritas(pagina: number, filtro: string): Observable<Transacao[]> {
-    const itensPorPagina = 6;
-
-    let params = new HttpParams()
-      .set("_page", pagina)
-      .set("_limit", itensPorPagina)
-      .set("favorito", true)
-
-      if(filtro.trim().length > 2) {
-        params = params.set("q", filtro)
+      if(favoritos) {
+        params = params.set("favorito", true)
       }
 
     return this.http.get<Transacao[]>(this.API, {params})
   }
+
+
 
   criar(transacao: Transacao): Observable<Transacao> {
     return this.http.post<Transacao>(this.API, transacao)

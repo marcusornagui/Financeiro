@@ -11,16 +11,18 @@
             >
             <img src="/assets/imagens/lupa.png" alt="Lupa">
         </div>
-        <h2 class="ff-inter">Minhas Transações</h2>
+        <h2 class="ff-inter">{{ titulo }}</h2>
         <div class="botoes">
-            <button class="botao">Minhas Transações</button>
+            <button class="botao" (click)="recarregarComponente()">Minhas Transações</button>
             <button class="botao" (click)="listarFavoritos()">Meus Favoritos</button>
             <button routerLink="/criarTransacao" class="botao">Nova Transação</button>
         </div>
     </header>
     <div class="mural" *ngIf="listaTransacoes.length > 0, else semTransacoes">
         <div *ngFor="let transacao of listaTransacoes">
-            <app-transacao [transacao]="transacao"></app-transacao>
+            <app-transacao [transacao]="transacao"
+            [listaFavoritos]="listaFavoritos"
+            ></app-transacao>
         </div>
     </div>
 </section>

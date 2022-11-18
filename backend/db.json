@@ -5,7 +5,7 @@
       "conteudo": "transferencia teste",
       "valor": 2,
       "modelo": "receita",
-      "favorito": true
+      "favorito": false
     },
     {
       "conteudo": "Teste",
@@ -18,14 +18,14 @@
       "conteudo": "2323",
       "valor": "3333",
       "modelo": "despesa",
-      "favorito": false,
+      "favorito": true,
       "id": 5
     },
     {
       "conteudo": "2",
       "valor": "2",
       "modelo": "despesa",
-      "favorito": false,
+      "favorito": true,
       "id": 6
     },
     {
@@ -33,7 +33,7 @@
       "conteudo": "2",
       "valor": "2",
       "modelo": "receita",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "44",
@@ -46,8 +46,15 @@
       "conteudo": "Novo",
       "valor": "2",
       "modelo": "despesa",
-      "favorito": false,
+      "favorito": true,
       "id": 9
+    },
+    {
+      "conteudo": "t",
+      "valor": "4",
+      "modelo": "despesa",
+      "favorito": false,
+      "id": 10
     }
   ]
 }
