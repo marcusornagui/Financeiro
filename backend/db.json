@@ -8,11 +8,11 @@
       "favorito": false
     },
     {
+      "id": 4,
       "conteudo": "Teste",
-      "valor": "2ee333",
+      "valor": 100,
       "modelo": "despesa",
-      "favorito": true,
-      "id": 4
+      "favorito": true
     },
     {
       "conteudo": "2323",
@@ -55,6 +55,13 @@
       "modelo": "despesa",
       "favorito": false,
       "id": 10
+    },
+    {
+      "conteudo": "4",
+      "valor": 23.22,
+      "modelo": "despesa",
+      "favorito": false,
+      "id": 11
     }
   ]
 }

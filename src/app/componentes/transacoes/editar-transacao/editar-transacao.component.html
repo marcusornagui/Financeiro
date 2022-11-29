@@ -9,7 +9,7 @@
         Descrição é obrigatória!
       </div>
       <label for="valor">Valor</label>
-      <input type="textarea" class="input" id="valor" formControlName="valor" placeholder="Digite o valor">
+      <input type="number" class="input" id="valor" formControlName="valor" placeholder="Digite o valor">
       <div class="mensagem__erro" *ngIf="formulario.get('valor')?.errors?.['required'] && formulario.get('valor')?.touched">
         Valor é obrigatória!
       </div>
@@ -30,7 +30,7 @@
           <div class="tipo-transacao despesa ff-roboto-mono">
             <img src="../../../../assets/imagens/despesa.png" alt="Aspas azuis">
             <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
-            <p class="valor"><b>{{ formulario.get('valor')?.value }}</b></p>
+            <p class="valor"><b>{{ formulario.get('valor')?.value | currency }}</b></p>
           </div>
         </div>
         <div class="radio-modelo">
@@ -43,9 +43,9 @@
           </label>
           Prévia:
           <div class="tipo-transacao receita ff-roboto-mono">
-            <img src="../../../../assets/imagens/receita.png" alt="Aspas azuis">
+            <img src="../../../../assets/imagens/receita.png" alt="Aspas azuis claro">
             <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
-            <p class="valor"><b>{{ formulario.get('valor')?.value }}</b></p>
+            <p class="valor"><b>{{ formulario.get('valor')?.value | currency }}</b></p>
           </div>
         </div>
         <div class="radio-modelo">
@@ -58,9 +58,9 @@
           </label>
           Prévia:
           <div class="tipo-transacao transferencia ff-roboto-mono">
-            <img src="../../../../assets/imagens/transferencia.png" alt="Aspas azuis">
+            <img src="../../../../assets/imagens/transferencia.png" alt="Aspas verde">
             <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
-            <p class="valor"><b>{{ formulario.get('valor')?.value }}</b></p>
+            <p class="valor"><b>{{ formulario.get('valor')?.value | currency }}</b></p>
           </div>
         </div>
       </div>

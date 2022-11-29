@@ -1,7 +1,7 @@
 <div class="transacao {{ transacao.modelo }} ff-roboto-mono" [ngClass]="larguraTransacao()">
     <img src="/assets/imagens/{{ transacao.modelo }}.png" alt="Aspas Coloridas">
     <p class="conteudo">{{ transacao.conteudo }}</p>
-    <p class="conteudo"><b>{{ transacao.valor }}</b></p>
+    <p class="conteudo"><b>{{ transacao.valor | currency }}</b></p>
     <div class="acoes">
         <button class="botao-favorito" (click)="atualizarFavorito()">
             <img src="/assets/imagens/icone-favorito-{{ mudarIconeFavorito() }}.png" alt="Ícone Favorito {{ mudarIconeFavorito() }}">
